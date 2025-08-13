@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+  <div class="bg-white text-gray-900 rounded-lg shadow-lg max-w-lg w-full p-6">
+    <h1 class="text-2xl font-bold mb-4">Individual Record</h1>
+
+    <div class="space-y-3">
+      <p><span class="font-semibold">ID: </span> {{ customer_records.id}}</p>
+      <p><span class="font-semibold">Created At:</span> {{ customer_records.created_at }}</p>
+      <p><span class="font-semibold">Name:</span> {{ customer_records.first_name }} {{ customer_records.last_name }}</p>
+      <p><span class="font-semibold">Email:</span> {{ customer_records.email }}</p>
+      <p><span class="font-semibold">Phone:</span> {{ customer_records.phone }}</p>
+      <p><span class="font-semibold">Address:</span> {{ customer_records.address }}</p>
+      <p><span class="font-semibold">City:</span> {{ customer_records.city }}</p>
+      <p><span class="font-semibold">State:</span> {{ customer_records.State }}</p>
+      <p><span class="font-semibold">Zipcode:</span> {{ customer_records.zipcode }} </p>
+    </div>
+
+    <div>
+      <a href="{% url 'home' %}" class="btn btn-secondary">
+        Back
+      </a>
+
+      
+        <a href="{% url 'update_record' customer_records.id %}" class="btn btn-outline-primary">
+          Update
+        </a>
+        
+        <a href="{% url 'delete' customer_records.id %}" class="btn btn-outline-danger">
+          Delete
+        </a>
+      
+    </div>
+
+{%  endblock %}
